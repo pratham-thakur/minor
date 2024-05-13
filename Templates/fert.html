@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="fert">
+	<h1>Fertilizer Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Tempertaure" placeholder="Temperature" required="required" />
+        <input type="text" name="Humidity" placeholder="Humidity" required="required" />
+		<input type="text" name="Moisture" placeholder="Moisture" required="required" />
+		<input type="text" name="Nitrogen" placeholder="Nitrogen" required="required" />
+    <input type="text" name="Potassium" placeholder="Potassium" required="required" />
+    <input type="text" name="Phosphorous" placeholder="Phosphorous" required="required" />
+    <input type="text" name="Soil_Num" placeholder="Soil_Num" required="required" />
+    <input type="text" name="Crop_Num" placeholder="Crop_Num" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+   
+
+ </div>
+
+
+</body>
+</html>
